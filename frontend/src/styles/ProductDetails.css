@@ -1,0 +1,105 @@
+const styles = {
+  container: {
+    padding: "30px",
+    background: "#f9fafb",
+    minHeight: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-start"
+  },
+
+  card: {
+    display: "flex",
+    gap: "40px",
+    background: "#fff",
+    padding: "25px",
+    borderRadius: "16px",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+    maxWidth: "1100px",
+    width: "100%"
+  },
+
+  imageSection: {
+    flex: 1
+  },
+
+  mainImage: {
+    width: "100%",
+    height: "450px",
+    objectFit: "cover",
+    borderRadius: "12px"
+  },
+
+  navBtn: {
+    position: "absolute",
+    top: "45%",
+    background: "rgba(0,0,0,0.5)",
+    color: "#fff",
+    border: "none",
+    padding: "10px 12px",
+    borderRadius: "50%",
+    cursor: "pointer"
+  },
+
+  thumbnailContainer: {
+    display: "flex",
+    gap: "10px",
+    marginTop: "12px"
+  },
+
+  thumbnail: {
+    width: "65px",
+    height: "65px",
+    objectFit: "cover",
+    borderRadius: "8px",
+    cursor: "pointer"
+  },
+
+  details: {
+    flex: 1.2
+  },
+
+  title: {
+    fontSize: "26px",
+    fontWeight: "bold",
+    color: "#111827"
+  },
+
+  price: {
+    fontSize: "22px",
+    fontWeight: "bold",
+    color: "#6366f1",
+    marginTop: "10px"
+  },
+
+  deposit: {
+    color: "#6b7280",
+    marginTop: "5px"
+  },
+
+  description: {
+    marginTop: "15px",
+    color: "#444",
+    lineHeight: "1.6"
+  },
+
+  tenure: {
+    display: "inline-block",
+    marginRight: "10px",
+    padding: "8px 14px",
+    border: "1px solid #ddd",
+    borderRadius: "8px",
+    cursor: "pointer",
+    marginTop: "10px"
+  },
+
+  btn: {
+    padding: "12px 16px",
+    marginRight: "10px",
+    border: "none",
+    borderRadius: "10px",
+    cursor: "pointer",
+    color: "#fff",
+    background: "#6366f1"
+  }
+};
