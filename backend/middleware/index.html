@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammed Jalal | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #0f172a;
+      --card: rgba(15, 23, 42, 0.7);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #22d3ee;
+      --border: rgba(148, 163, 184, 0.2);
+      --shadow: 0 20px 45px rgba(8, 47, 73, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 10% 10%, #1e3a8a 0%, transparent 40%),
+                  radial-gradient(circle at 90% 20%, #155e75 0%, transparent 40%),
+                  linear-gradient(150deg, var(--bg), #0b1122 45%, #0a162d 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::before {
+      background-image: linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+      animation: pulseGrid 8s ease-in-out infinite;
+    }
+
+    body::after {
+      background: radial-gradient(circle at 30% 40%, rgba(56, 189, 248, 0.25), transparent 40%),
+                  radial-gradient(circle at 70% 65%, rgba(34, 211, 238, 0.2), transparent 40%);
+      filter: blur(60px);
+      opacity: 0.6;
+      animation: drift 10s linear infinite alternate;
+    }
+
+    @keyframes pulseGrid {
+      0%, 100% { opacity: 0.25; }
+      50% { opacity: 0.55; }
+    }
+
+    @keyframes drift {
+      from { transform: translateY(-15px); }
+      to { transform: translateY(15px); }
+    }
+
+    .container {
+      width: min(1080px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 7rem 0 3.5rem;
+      position: relative;
+      text-align: center;
+      animation: riseIn 900ms ease both;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 100px;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #bae6fd;
+      background: rgba(14, 116, 144, 0.18);
+      margin-bottom: 1.1rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 3.8rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 680px;
+      margin: 0.9rem auto 1.8rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 0.7rem 1.1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn.primary {
+      color: #02131d;
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 25px rgba(34, 211, 238, 0.35);
+    }
+
+    .btn.secondary {
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(30, 41, 59, 0.65);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    main {
+      display: grid;
+      gap: 1rem;
+      padding-bottom: 3rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+      animation: riseIn 700ms ease both;
+    }
+
+    .card:nth-child(2) { animation-delay: 120ms; }
+    .card:nth-child(3) { animation-delay: 180ms; }
+    .card:nth-child(4) { animation-delay: 240ms; }
+    .card:nth-child(5) { animation-delay: 300ms; }
+
+    h2 {
+      color: #7dd3fc;
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    p, li {
+      color: var(--text);
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 0.8rem 0 0 1.1rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .project-link {
+      color: #67e8f9;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.8rem;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.9rem;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      background: rgba(14, 116, 144, 0.2);
+      color: #bae6fd;
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @keyframes riseIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 680px) {
+      header { padding-top: 5.2rem; }
+      .card { padding: 1.1rem; border-radius: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">✨ Open to Opportunities</span>
+      <h1>Muhammed Jalal</h1>
+      <p class="hero-sub">Junior Full-Stack Developer crafting fast, scalable web experiences with clean backend architecture and modern frontend interfaces.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="mailto:muhammedjalal928@gmail.com">Hire Me</a>
+        <a class="btn secondary" href="https://github.com/Muhammedjalalk" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Profile</h2>
+        <p>Full-Stack Developer skilled in Python, Django, Node.js, and React. Experienced in building REST APIs, database systems, and production-ready web applications. Passionate about performance, maintainability, and continuous learning.</p>
+      </section>
+
+      <section class="card">
+        <h2>Experience</h2>
+        <h3>Python Intern — OneTeam Calicut</h3>
+        <p class="muted">June 2025 – December 2025</p>
+        <ul>
+          <li>Developed backend systems using Python and Django.</li>
+          <li>Built REST APIs handling 100+ user requests.</li>
+          <li>Improved platform performance by approximately 20%.</li>
+          <li>Worked with SQL databases and authentication workflows.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Projects</h2>
+        <h3>AI-Based Civic Complaint System</h3>
+        <p class="muted">Django, REST API, SQL</p>
+        <p>Built a backend system with secure authentication, complaint routing, and reliable API handling for civic workflows.</p>
+        <a class="project-link" href="https://github.com/Muhammedjalalk/civic-complaint-system" target="_blank" rel="noopener noreferrer">View Project →</a>
+      </section>
+
+      <section class="card">
+        <h2>Skills</h2>
+        <div class="skills-wrap">
+          <span class="pill">Python</span>
+          <span class="pill">Django</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">React</span>
+          <span class="pill">Node.js</span>
+          <span class="pill">MongoDB</span>
+          <span class="pill">SQL</span>
+          <span class="pill">REST API</span>
+          <span class="pill">Git</span>
+          <span class="pill">Postman</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Contact</h2>
+        <p>Email: <a class="project-link" href="mailto:muhammedjalal928@gmail.com">muhammedjalal928@gmail.com</a></p>
+        <p>GitHub: <a class="project-link" href="https://github.com/Muhammedjalalk" target="_blank" rel="noopener noreferrer">github.com/Muhammedjalalk</a></p>
+        <p>LinkedIn: <a class="project-link" href="https://linkedin.com/in/muhammed-jalal-40b7b631a" target="_blank" rel="noopener noreferrer">View Profile</a></p>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Muhammed Jalal — Built with passion and performance in mind.
+    </footer>
+  </div>
+</body>
+</html>
